@@ -113,6 +113,15 @@ class cexapi {
 	}
 	
 	/**
+	 * Last Price for each trading pair will be defined as price of the last executed order for this pair.
+	 * @param string $couple
+	 * @return array JSON results
+	 */
+	public function last_price($couple = 'BTC/USD') {
+		return $this->api_call('last_price/', array(), false, $couple);
+	}
+	
+	/**
 	 * Get the current ticker results for the given pair, or 'GHS/BTC' by default.
 	 * @param string $couple
 	 * @return array JSON results
